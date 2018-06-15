@@ -14,9 +14,21 @@ router.post('/juggling-balls-answer', function (req, res) {
   // check whether the variable matches a condition
   if (jugglingBalls == "3 or more") {
     // send user to next page
-    res.redirect('/juggling-trick')
+    res.redirect('/juggling-ball-type')
   } else {
     // send user to ineligible page
+    res.redirect('/ineligible')
+  }
+})
+
+router.post('/juggling-ball-type-answer', function (req, res) {
+  // make a variable to store the data
+  var jugglingBallType = [].concat(req.session.data['juggling-ball-type'])
+
+  if (jugglingBallType.includes("Regular juggling balls")) {
+
+    res.redirect('/juggling-trick')
+  } else {
     res.redirect('/ineligible')
   }
 })

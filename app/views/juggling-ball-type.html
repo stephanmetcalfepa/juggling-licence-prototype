@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="juggling-balls">Back</a>
+
+      <h1 class="heading-large">What do you prefer to juggle with?
+      </h1>
+
+      <form class="form" action="juggling-ball-type-answer" method="post">
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend>
+              <span class="body-text">Select all that apply</span>
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="juggling-ball-type-1" name="juggling-ball-type" type="checkbox" value="Regular juggling balls" {{ checked("juggling-ball-type", "Regular juggling balls")}}>
+              <label for="juggling-ball-type-1">Regular juggling balls</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="juggling-ball-type-2" name="juggling-ball-type" type="checkbox" value="Disused hand grenades" {{ checked("juggling-ball-type", "Disused hand grenades")}}>
+              <label for="juggling-ball-type-2">Disused hand grenades</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="juggling-ball-type-3" name="juggling-ball-type" type="checkbox" value="Kitchen knives" {{ checked("juggling-ball-type", "Kitchen knives")}}>
+              <label for="juggling-ball-type-3">Kitchen knives</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
